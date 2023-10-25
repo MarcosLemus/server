@@ -1,0 +1,13 @@
+{
+  "name": "server-tarea",
+  "version": "1.0.0",
+  "description": "​\r 1. Crear el primer servidor con nodejs que atienda solicitudes y devuelva respuestas\r 2.  Repasar etiquetas html y css\r ​\r Crea un servidor preparado para escuchar en un puerto solicitudes y servir un site que cumpla con lo siguiente:\r ​\r - Crea rutas básicas para servir una página web clásica (Home| ¿Quiénes somos? | ¿Dónde Estamos? | ¿Qué hacemos? | Contacto... etc...)\r - ¿Llegaste aquí? Ahora sirve en respuesta a la petición de cada ruta (endpoint) los ficheros HTML correspondientes: home.html, contact.html, about.html...\r  - Construye un area de navegación (Hipervinculos) en las secciones para navegar por el site\r - El código fuente del site debe estar en archivos .html y .css que deben ser leidos con nodejs desde el file system para enviar su contenido con el cuerpo de las respuestas HTTP.\r - La app se debe iniciar con el comando `npm start` (investiga como)\r - Crea una página 404.html para los request a otros recursos del servidor no contemplados.\r ​\r Endpoints de ejemplo:\r ​\r ```js\r GET http://localhost:3000/\r GET http://localhost:3000/about\r GET http://localhost:3000/location\r GET http://localhost:3000/mission\r GET http://localhost:3000/contact\r ```\r ​\r ​\r ## Resources\r ​\r [HTTP mimetypes](https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)\r [HTTP statusCode](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)\r [nodejs http.createServer()](https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener)\r [nodejs request](https://nodejs.org/api/http.html#class-httpclientrequest)\r [nodejs response](https://nodejs.org/api/http.html#class-httpclientrresponse)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
