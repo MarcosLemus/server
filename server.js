@@ -1,4 +1,8 @@
 const http = require('http')
+const fs = require('fs')
+const index = fs
+
+
 
 const server = http.createServer((request, response) => {
 	const path = request.url
@@ -10,13 +14,16 @@ const server = http.createServer((request, response) => {
 		response.setHeader('content-type', 'text/html') // Establece cabeceras http de respuesta
 
 		// Prepara el body
-		response.write(
-			'<html><head><link rel="stylesheet" type="text/css" href="/styles/global.css"></head>'
-		)
-		response.write('<body><h1>Welcome to the club!</h1>')
-        response.write('<ul><li><a #home>Home</a></li>')
-		response.write('<marquee>Bienvenido al home</marquee></body></html>')
+        response.write(index.readFileSync('./html/index.html', 'utf8', (err, data) => {
+            if(err) {
+                console.log(err);
+            } 
+                console.log(data);
+        }))
 
+
+        
+	
 		// Finaliza la respuesta
 		response.end()
 	} else if (path === '/styles/global.css') {
@@ -24,7 +31,7 @@ const server = http.createServer((request, response) => {
 		response.setHeader('content-type', 'text/css') // Establece cabeceras http de respuesta
 
 		// Prepara el body
-		response.write('body { background-color: red; }')
+	
 
 		response.end()
 	} else {
