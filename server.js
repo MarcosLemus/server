@@ -16,14 +16,15 @@ const server = http.createServer((request, response) => {
 		// Prepara el body
         response.write(index.readFileSync('./html/index.html', 'utf8', (err, data) => {
             if(err) {
-                console.log(err);
+                console.log('error');
+				return
             } 
                 console.log(data);
         }))
-
-
+		
+		
         
-	
+		
 		// Finaliza la respuesta
 		response.end()
 	} else if (path === '/styles/global.css') {
